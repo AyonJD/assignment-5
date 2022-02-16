@@ -34,27 +34,30 @@ body {
 /* Image */
 .image {
   overflow: hidden !important;
-  max-height: 710px;
+  max-height: 700px;
 }
 #image {
-  border-radius: 8px 0 0 8px;
-  object-fit: cover;
+  border-radius: 8px;
   height: 100%;
 }
 /* Form */
 .form-bg {
   background: var(--color-primary);
-  border-radius: 0 8px 8px 0;
+  border-radius: 8px;
 }
 input {
   box-shadow: var(--shadow-lower);
   background: var(--color-primary) !important;
   border: none !important;
   padding: 0 10px;
+  color: var(--text-color) !important;
+  font-weight: 600 !important;
+  font-size: 18px;
 }
 input:focus {
   box-shadow: none !important;
   background-color: #fff !important;
+  color: var(--color-primary) !important;
 }
 .form-bg button {
   box-shadow: var(--shadow-upper);

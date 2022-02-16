@@ -12,27 +12,37 @@ function getTotalSpend() {
   const forRent = getInputValue("#input-rent");
   const forOther = getInputValue("#input-other");
   const totalSpending = forFood + forRent + forOther;
-  return totalSpending;
+  if (isNaN(forFood)) {
+    alert("Please Enter a valid Spending for Food");
+  } else if (isNaN(forRent)) {
+    alert("Please Enter a valid Spending for Rent");
+  } else if (isNaN(forOther)) {
+    alert("Please Enter a valid Spending for Other");
+  } else {
+    return totalSpending;
+  }
 }
 
 document.getElementById("calculate-btn").addEventListener("click", () => {
   const totalEarning = getInputValue("#input-income");
   const totalSpending = getTotalSpend();
-
   //Error Handling for Negative and Earning < Spend
-  if (totalEarning <= 0) {
+  if (totalEarning <= 0 || isNaN(totalEarning)) {
     alert("Please enter a valid amount");
   } else if (totalEarning < totalSpending) {
     alert("You can't spend more than you Eanr");
   } else {
-    //Updating total spending to the Total Spending Field
-    const totalSpendField = document.getElementById("total-spend");
-    totalSpendField.innerText = totalSpending;
+    if (typeof totalSpending !== "number") {
+    } else {
+      //Updating total spending to the Total Spending Field
+      const totalSpendField = document.getElementById("total-spend");
+      totalSpendField.innerText = totalSpending;
 
-    //Updating New balance to the New Balance Field
-    const newBalance = totalEarning - totalSpending;
-    const newBalanceField = document.getElementById("new-balance");
-    newBalanceField.innerText = newBalance;
+      //Updating New balance to the New Balance Field
+      const newBalance = totalEarning - totalSpending;
+      const newBalanceField = document.getElementById("new-balance");
+      newBalanceField.innerText = newBalance;
+    }
   }
 });
 
