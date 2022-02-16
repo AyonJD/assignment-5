@@ -12,12 +12,8 @@ function getTotalSpend() {
   const forRent = getInputValue("#input-rent");
   const forOther = getInputValue("#input-other");
   const totalSpending = forFood + forRent + forOther;
-  if (isNaN(forFood)) {
-    alert("Please Enter a valid Spending for Food");
-  } else if (isNaN(forRent)) {
-    alert("Please Enter a valid Spending for Rent");
-  } else if (isNaN(forOther)) {
-    alert("Please Enter a valid Spending for Other");
+  if (isNaN(forFood) || isNaN(forRent) || isNaN(forOther)) {
+    alert("Please Enter a valid amount");
   } else {
     return totalSpending;
   }
@@ -54,12 +50,15 @@ document.getElementById("saving-button").addEventListener("click", () => {
   //Updating the saving amount
   const savingParcent = getInputValue("#saving-parcent");
   const savingAmount = newBalance * (savingParcent / 100);
+  
 
   //Error handling for Saving Button and Saving Amount
   if (savingParcent < 0) {
     alert("Please enter a positive amount you want to save");
   } else if (newBalance < savingAmount) {
     alert("You can't save more than you Earn");
+  } else if (isNaN(newBalance) || isNaN(savingParcent)) {
+    alert('Please fill the above field')
   } else {
     const savingField = document.getElementById("total-save");
     savingField.innerText = savingAmount;
