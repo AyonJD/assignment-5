@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+/* ----------Color----------- */
+:root {
+    --color-primary: #FF4321;
+    --text-color: #fff;
+    --shadow-upper: -5px -5px 5px rgba(224, 224, 224, 0.3),
+                    8px 8px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lower: -15px -15px 15px rgba(224, 134, 134, 0.2),
+                    15px 15px 15px rgba(0, 0, 0, 0.1),
+                    inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+                    inset 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.primary{
+    color: var(--color-primary);
+}
+.text-color{
+    color: var(--text-color);
+}
+.btn-color{
+    background: var(--color-primary);
+    color: #fff;
+}
+body{
+    background-color: #292929;
+}
+/* Image */
+.image{
+    overflow: hidden !important;
+    max-height:710px;
+}
+#image{
+    border-radius: 8px 0 0 8px;
+    object-fit: cover;
+    height: 100%;
+}
+/* Form */
+.form-bg{
+    background: var(--color-primary);
+    border-radius: 0 8px 8px 0;
+}
+body input{
+    box-shadow: var(--shadow-lower);
+    background: var(--color-primary) !important;
+    border: none !important;
+}
+body input:focus{
+    box-shadow: none !important;
+    background-color: #fff !important;
+}
+.form-bg button{
+    box-shadow: var(--shadow-upper);
+    transition: all .4s ease-in-out;
+}
+.form-bg button:hover{
+    color: var(--text-color);
+    background: #dd2100;
+}
+
+
