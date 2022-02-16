@@ -60,7 +60,7 @@ input:focus {
   color: var(--color-primary) !important;
 }
 .form-bg button {
-  box-shadow: var(--shadow-upper);
+  box-shadow: var(--shadow-upper) !important;
   transition: all 0.4s ease-in-out;
 }
 .form-bg button:hover {

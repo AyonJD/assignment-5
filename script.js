@@ -50,7 +50,6 @@ document.getElementById("saving-button").addEventListener("click", () => {
   //Updating the saving amount
   const savingParcent = getInputValue("#saving-parcent");
   const savingAmount = newBalance * (savingParcent / 100);
-  
 
   //Error handling for Saving Button and Saving Amount
   if (savingParcent < 0) {
@@ -58,7 +57,7 @@ document.getElementById("saving-button").addEventListener("click", () => {
   } else if (newBalance < savingAmount) {
     alert("You can't save more than you Earn");
   } else if (isNaN(newBalance) || isNaN(savingParcent)) {
-    alert('Please fill the above field')
+    alert("Please fill the above field");
   } else {
     const savingField = document.getElementById("total-save");
     savingField.innerText = savingAmount;
