@@ -20,7 +20,7 @@ function getTotalSpend() {
     forRent < 0 ||
     forOther < 0
   ) {
-    alert("Please Enter a valid amount");
+    // alert("Please Enter a valid amount");
     totalSpendField.innerText = "";
   } else {
     return totalSpending;
@@ -33,8 +33,8 @@ document.getElementById("calculate-btn").addEventListener("click", () => {
   //Error Handling for Negative and Earning < Spend
   if (totalEarning <= 0) {
     alert("Please enter a valid amount");
-  } else if (isNaN(totalEarning)) {
-    alert('Please enter your Total Income')
+  } else if (isNaN(totalEarning) || totalSpending == undefined) {
+    alert('Please enter a valid amount')
   } else if (totalEarning < totalSpending) {
     alert("You can't spend more than you Earn");
   } else {

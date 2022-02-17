@@ -44,7 +44,7 @@ body {
   border-radius: 8px;
   height: 100%;
 }
-/* Form */
+/* input field */
 .form-bg {
   background: var(--color-primary);
   border-radius: 8px;
