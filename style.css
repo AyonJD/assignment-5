@@ -38,16 +38,16 @@ body {
 /* Image */
 .image {
   overflow: hidden !important;
-  max-height: 700px;
+  max-height: 683px;
+  border-radius: 8px 0 0 8px !important;
 }
 #image {
-  border-radius: 8px;
   height: 100%;
 }
 /* input field */
 .form-bg {
   background: var(--color-primary);
-  border-radius: 8px;
+  border-radius: 0 8px 8px 0;
 }
 input {
   box-shadow: var(--shadow-lower);
