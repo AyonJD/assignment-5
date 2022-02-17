@@ -11,9 +11,11 @@ function getTotalSpend() {
   const forFood = getInputValue("#input-food");
   const forRent = getInputValue("#input-rent");
   const forOther = getInputValue("#input-other");
+  const totalSpendField = document.getElementById("total-spend");
   const totalSpending = forFood + forRent + forOther;
-  if (isNaN(forFood) || isNaN(forRent) || isNaN(forOther)) {
+  if (isNaN(forFood) || isNaN(forRent) || isNaN(forOther) || forFood < 0 || forRent < 0 || forOther < 0) {
     alert("Please Enter a valid amount");
+      totalSpendField.innerText = ''
   } else {
     return totalSpending;
   }
@@ -47,7 +49,8 @@ document.getElementById("saving-button").addEventListener("click", () => {
   const newBalanceField = document.getElementById("new-balance");
   const newBalance = parseInt(newBalanceField.innerText);
   const totalEarning = getInputValue("#input-income");
-  console.log(totalEarning);
+  const totalSpendField = document.getElementById("total-spend");
+  const totalSpending = parseInt(totalSpendField.innerText)
 
   //Updating the saving amount
   const savingParcent = getInputValue("#saving-parcent");
@@ -61,8 +64,8 @@ document.getElementById("saving-button").addEventListener("click", () => {
     alert("Please enter a positive amount you want to save");
   } else if (totalEarning < savingAmount) {
     alert("You can't save more than you Earn");
-  } else if (isNaN(totalEarning) || isNaN(savingParcent)) {
-    alert("Please fill the above field");
+  } else if (isNaN(totalEarning) || isNaN(savingParcent) || isNaN(totalSpending)) {
+    alert("Please enter a valid amount");
   } else if (remainingBalance < 0) {
     alert("You don't have enougn balance to save");
   } else {
