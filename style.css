@@ -63,6 +63,10 @@ input:focus {
   background-color: #fff !important;
   color: var(--color-primary) !important;
 }
+input::placeholder{
+  color: rgba(255, 255, 255, 0.61) !important;
+  font-size: 13px!important;
+}
 .form-bg button {
   box-shadow: var(--shadow-upper) !important;
   transition: all 0.4s ease-in-out;
