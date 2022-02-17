@@ -31,8 +31,10 @@ document.getElementById("calculate-btn").addEventListener("click", () => {
   const totalEarning = getInputValue("#input-income");
   const totalSpending = getTotalSpend();
   //Error Handling for Negative and Earning < Spend
-  if (totalEarning <= 0 || isNaN(totalEarning)) {
+  if (totalEarning <= 0) {
     alert("Please enter a valid amount");
+  } else if (isNaN(totalEarning)) {
+    alert('Please enter your Total Income')
   } else if (totalEarning < totalSpending) {
     alert("You can't spend more than you Earn");
   } else {
@@ -75,7 +77,7 @@ document.getElementById("saving-button").addEventListener("click", () => {
     isNaN(savingParcent) ||
     isNaN(totalSpending)
   ) {
-    alert("Please enter a valid amount");
+    alert("Please fill the above field");
   } else if (remainingBalance < 0) {
     alert("You don't have enougn balance to save");
   } else {
