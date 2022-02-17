@@ -37,6 +37,8 @@ document.getElementById("calculate-btn").addEventListener("click", () => {
     alert('Please enter a valid amount')
   } else if (totalEarning < totalSpending) {
     alert("You can't spend more than you Earn");
+    const totalSpendField = document.getElementById("total-spend");
+      totalSpendField.innerText = '';
   } else {
     if (typeof totalSpending !== "number") {
     } else {
@@ -82,7 +84,7 @@ document.getElementById("saving-button").addEventListener("click", () => {
     alert("You don't have enougn balance to save");
   } else {
     const savingField = document.getElementById("total-save");
-    savingField.innerText = savingAmount;
+    savingField.innerText = savingAmount.toFixed(2);
     const remainingBanalceField = document.getElementById("remaining-balance");
     remainingBanalceField.innerText = remainingBalance;
   }
