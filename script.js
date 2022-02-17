@@ -2,7 +2,7 @@
 function getInputValue(inputId) {
   const inputField = document.querySelector(inputId);
   const inputValue = parseInt(inputField.value);
-  inputField.value = "";
+  // inputField.value = "";
   return inputValue;
 }
 
@@ -46,25 +46,35 @@ document.getElementById("saving-button").addEventListener("click", () => {
   //Getting the New Balance
   const newBalanceField = document.getElementById("new-balance");
   const newBalance = parseInt(newBalanceField.innerText);
+  const totalEarning = getInputValue("#input-income");
+  console.log(totalEarning);
 
   //Updating the saving amount
   const savingParcent = getInputValue("#saving-parcent");
-  const savingAmount = newBalance * (savingParcent / 100);
+  const savingAmount = totalEarning * (savingParcent / 100);
+
+  // Updating Remaining Balance
+  const remainingBalance = newBalance - savingAmount;
 
   //Error handling for Saving Button and Saving Amount
   if (savingParcent < 0) {
     alert("Please enter a positive amount you want to save");
-  } else if (newBalance < savingAmount) {
+  } else if (totalEarning < savingAmount) {
     alert("You can't save more than you Earn");
-  } else if (isNaN(newBalance) || isNaN(savingParcent)) {
+  } else if (isNaN(totalEarning) || isNaN(savingParcent)) {
     alert("Please fill the above field");
+  } else if (remainingBalance < 0) {
+    alert("You don't have enougn balance to save");
   } else {
     const savingField = document.getElementById("total-save");
     savingField.innerText = savingAmount;
-
-    //Updating Remaining Balance
-    const remainingBalance = newBalance - savingAmount;
     const remainingBanalceField = document.getElementById("remaining-balance");
     remainingBanalceField.innerText = remainingBalance;
   }
+
+  //Clearing all input field
+  const input = Array.from(document.querySelectorAll('input'));
+  input.forEach(e => {
+    e.value = '';
+  })
 });
